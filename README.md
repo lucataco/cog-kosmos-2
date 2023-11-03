@@ -12,10 +12,10 @@ Then, you can run predictions:
 
 ## Example:
 
-![alt text](snowman.png)
-
 ```
 An image of a snowman warming himself by a campfire.
 
 [('a snowman', (12, 21), [(0.390625, 0.046875, 0.984375, 0.828125)]), ('a campfire', (41, 51), [(0.109375, 0.640625, 0.546875, 0.984375)])]
 ```
+
+![alt text](snowman.png)
