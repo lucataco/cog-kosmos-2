@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+# Run this before you deploy it on replicate
+import os
+import sys
+import torch
+from transformers import AutoProcessor, AutoModelForVision2Seq
+
+# append project directory to path so predict.py can be imported
+sys.path.append('.')
+from predict import MODEL_NAME, MODEL_CACHE, MODEL_PROC
+
+# Make cache folders
+if not os.path.exists(MODEL_CACHE):
+    os.makedirs(MODEL_CACHE)
+
+if not os.path.exists(MODEL_PROC):
+    os.makedirs(MODEL_PROC)
+
+
+model = AutoModelForVision2Seq.from_pretrained(
+    MODEL_NAME,
+    cache_dir=MODEL_CACHE
+)
+
+processor = AutoProcessor.from_pretrained(
+    MODEL_NAME,
+    cache_dir=MODEL_PROC
+)
